@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #b4d870;
+            color: #0a0a0a;
+        }
+        header {
+            background-color: #9ec165;
+            color: rgb(20, 21, 20);
+            text-align: center;
+            padding: 20px 0;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            font-size: 1.2em;
+            margin: 5px 0 20px;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            background-color: rgb(84, 134, 163);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(16, 16, 16, 0.1);
+        }
+        .about img {
+            max-width: 150px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto 20px;
+        }
+        .skills ul, .projects ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .skills ul li, .projects ul li {
+            background-color: #f4f4f4;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .projects img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        .resume a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .contact p {
+            margin: 10px 0;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .upload-form {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .upload-form input[type="file"] {
+            display: none;
+        }
+        .upload-form label {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .upload-form img {
+            max-width: 150px;
+            border-radius: 50%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Mounika Udamala</h1>
+        <p>A Web Developer</p>
+    </header>
+
+    <div class="container">
+
+        <!-- About Section -->
+        <section class="about">
+            <h2>About Me</h2>
+            <div class="upload-form">
+                <form>
+                    <label for="upload"></label>
+                    <input type="file" id="upload" accept="image/*" onchange="displayImage(this)">
+                </form>
+                <img id="" src="image.jpg" alt="">
+            </div>
+            <p>Hello! I'm Mounika Udamala, a web developer with a passion for creating beautiful and functional websites. I have experience in HTML, CSS, and JavaScript, and I love bringing ideas to life in the digital space.</p>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML & CSS</li>
+                <li>JavaScript</li>
+                <li>Responsive Design</li>
+                <li>Web Development</li>
+            </ul>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects">
+            <h2>Projects</h2>
+            <ul>
+                <li>
+                    <h3>Calculator</h3>
+                    <p>I am done this project using html ans css.</p>
+                    <img src="project-image1.jpg" alt="Project Image 1">
+                </li>
+                <li>
+                    <h3>PassWord Generator</h3>
+                    <p>I am done this project using java script</p>
+                    <img src="project-image2.jpg" alt="Project Image 2">
+                </li>
+                <!-- Add more projects as needed -->
+            </ul>
+        </section>
+
+        <!-- Resume Section -->
+        <section class="resume">
+            <h2>Resume</h2>
+            <p>If you'd like to learn more about my work, you can download my resume below.</p>
+            <a href="your-resume.pdf" download>Download Resume</a>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact">
+            <h2>Contact</h2>
+            <p>Email: mounikaudamala@gmail.com</p>
+            <p>Phone: +123 456 7890</p>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Mounika Udamala. All Rights Reserved.</p>
+        <p><a href="#">LinkedIn</a> | <a href="#">GitHub</a> | <a href="#">Twitter</a></p>
+    </footer>
+
+    <script>
+        function displayImage(input) {
+            const file = input.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('profile-picture').src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+
+</body>
+</html>
